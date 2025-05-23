@@ -1,9 +1,20 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import { ImageModalData, UnsplashImage } from "../../types";
 
 Modal.setAppElement("#root");
 
-export default function ImageModal({ data, onClose }) {
+interface ImageModalProps {
+  data: ImageModalData;
+  onClose: () => void;
+}
+
+export default function ImageModal({
+  data,
+  onClose,
+}: ImageModalProps): JSX.Element {
+  if (!data) return <></>;
+
   return (
     <Modal
       isOpen={!!data}
@@ -16,7 +27,7 @@ export default function ImageModal({ data, onClose }) {
         <img
           className={css.image}
           src={data.urls.regular}
-          alt={data.alt_description}
+          alt={data.alt_description || ""}
         />
         <div className={css.info}>
           <p>
@@ -27,7 +38,7 @@ export default function ImageModal({ data, onClose }) {
           </p>
           <p>
             <strong>Description:</strong>{" "}
-            {data.alt_description || "No description"}
+            {data.description || data.alt_description || "No description"}
           </p>
         </div>
       </div>

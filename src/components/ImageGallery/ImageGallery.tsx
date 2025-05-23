@@ -1,7 +1,16 @@
 import css from "./ImageGallery.module.css";
 import ImageCard from "../ImageCard/ImageCard";
+import { UnsplashImage } from "../../types";
 
-export default function ImageGallery({ images, onImageClick }) {
+interface ImageGalleryProps {
+  images: UnsplashImage[];
+  onImageClick: (image: UnsplashImage) => void;
+}
+
+export default function ImageGallery({
+  images,
+  onImageClick,
+}: ImageGalleryProps): JSX.Element | null {
   if (!images.length) return null;
 
   return (
