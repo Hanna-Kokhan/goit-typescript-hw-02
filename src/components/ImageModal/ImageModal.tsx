@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
-import { ImageModalData, UnsplashImage } from "../../types";
+import { ImageModalData } from "../../types";
 
 Modal.setAppElement("#root");
 
@@ -9,11 +9,8 @@ interface ImageModalProps {
   onClose: () => void;
 }
 
-export default function ImageModal({
-  data,
-  onClose,
-}: ImageModalProps): JSX.Element {
-  if (!data) return <></>;
+export default function ImageModal({ data, onClose }: ImageModalProps) {
+  if (!data) return null;
 
   return (
     <Modal

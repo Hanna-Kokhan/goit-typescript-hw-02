@@ -12,7 +12,7 @@ import { UnsplashImage, UnsplashSearchResponse, ImageModalData } from "./types";
 
 const ACCESS_KEY: string = "9Fvr_mU7CqsJ9MEc9I6dm69ffq7oQVEZaQC5ORu5ni0";
 
-export default function App(): JSX.Element {
+export default function App() {
   const [images, setImages] = useState<UnsplashImage[]>([]);
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);

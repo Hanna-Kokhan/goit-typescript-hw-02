@@ -10,7 +10,7 @@ interface ImageGalleryProps {
 export default function ImageGallery({
   images,
   onImageClick,
-}: ImageGalleryProps): JSX.Element | null {
+}: ImageGalleryProps) {
   if (!images.length) return null;
 
   return (

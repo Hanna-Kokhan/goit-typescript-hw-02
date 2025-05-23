@@ -6,7 +6,7 @@ interface ImageCardProps {
   onClick: (image: UnsplashImage) => void;
 }
 
-const ImageCard = ({ image, onClick }: ImageCardProps): JSX.Element => (
+const ImageCard = ({ image, onClick }: ImageCardProps) => (
   <div className={css.imageCard} onClick={() => onClick(image)}>
     <img
       className={css.image}

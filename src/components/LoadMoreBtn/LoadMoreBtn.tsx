@@ -4,7 +4,7 @@ interface LoadMoreBtnProps {
   onClick: () => void;
 }
 
-const LoadMoreBtn = ({ onClick }: LoadMoreBtnProps): JSX.Element => (
+const LoadMoreBtn = ({ onClick }: LoadMoreBtnProps) => (
   <div className={css.loadMore}>
     <button className={css.loadMoreButton} onClick={onClick}>
       Load more
